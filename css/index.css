@@ -476,10 +476,15 @@
     border-left: 1px solid #3333;
     line-height: 20px;
 }
+.header__search--select-option
+{
+    display: none;
+}
 
 .header__search--select:hover .header__search--select-option
 {
     display: block;
+
 }
 .header__search--select-option
 {
@@ -604,10 +609,24 @@
     color: var(--text-color);
 }
 /* form cart */
-.header__cart{
-    color: var(--white-color);
-    width: var(--header-height);
-    text-align: center;
+.header__cart-wrap
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 1px var(--white-color);
     font-size: 2rem;
+    background-color: none;
+    display: flex;
+    cursor: pointer;
+    margin-left: 20px;
 }
-
+.header__cart-ico
+{
+    margin: auto;
+    color: var(--white-color);
+}
+.header__cart--form
+{
+    min-width: 300px;    
+}
