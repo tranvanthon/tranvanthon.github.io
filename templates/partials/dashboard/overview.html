@@ -1,0 +1,31 @@
+<!-- Overview -->
+{% load format_filter %}
+<section>
+    <h3 class="fw-bold mb-4">Xin chào, {{ user.get_full_name }}!</h3>
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card p-4 bg-white shadow-sm">
+                <h6 class="text-muted">Tổng chi tiêu</h6>
+                <h2 class="fw-bold text-primary">{{ total_spent|dot_thousands }}đ</h2>
+                <small class="text-success"><i class="bi bi-arrow-up"></i> +12% so với tháng trước</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 bg-white shadow-sm">
+                <h6 class="text-muted">Đơn hàng đã đặt</h6>
+                <h2 class="fw-bold text-dark">{{ orders_count }}</h2>
+                <small class="text-muted">{{ order.items_count }} đơn hàng đang giao</small>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-4 bg-white shadow-sm">
+                <h6 class="text-muted">Điểm thưởng</h6>
+                <h2 class="fw-bold text-warning">{{ shipping_count }}</h2>
+                <small class="text-muted">Tương đương 125.000đ</small>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {{ current_partial }}-{{ page }}
+</section>

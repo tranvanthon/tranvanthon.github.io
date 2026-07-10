@@ -1,0 +1,140 @@
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold">Bảng quản trị hệ thống</h3>
+        <span class="badge bg-dark px-3 py-2"><i class="bi bi-cpu me-2"></i>Server Status: Online</span>
+    </div>
+    <div class="row g-4 mb-4">
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm border-start border-primary border-4">
+                <p class="text-muted small mb-1">Tổng người dùng</p>
+                <h3 class="fw-bold">15,402</h3>
+                <div class="progress" style="height: 4px;">
+                    <div class="progress-bar" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm border-start border-warning border-4">
+                <p class="text-muted small mb-1">Tài khoản mới (24h)</p>
+                <h3 class="fw-bold">124</h3>
+                <small class="text-warning"><i class="bi bi-clock-history"></i> Đang chờ xác minh</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm border-start border-danger border-4">
+                <p class="text-muted small mb-1">Báo cáo vi phạm</p>
+                <h3 class="fw-bold">12</h3>
+                <small class="text-danger"><i class="bi bi-exclamation-triangle"></i> Cần xử lý ngay</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 border-0 shadow-sm border-start border-info border-4">
+                <p class="text-muted small mb-1">Băng thông sử dụng</p>
+                <h3 class="fw-bold">82%</h3>
+                <div class="progress" style="height: 4px;">
+                    <div class="progress-bar bg-info" style="width: 82%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white p-3 d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold mb-0">Quản lý nhân sự vận hành</h6>
+                    <button class="btn btn-sm btn-primary">Thêm nhân viên</button>
+                </div>
+                <div class="table-responsive p-3">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr class="small text-muted">
+                                <th>NHÂN VIÊN</th>
+                                <th>VAI TRÒ</th>
+                                <th>TRUY CẬP CUỐI</th>
+                                <th>THAO TÁC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="https://i.pravatar.cc/150?u=12"
+                                             class="rounded-circle"
+                                             width="35">
+                                        <div>
+                                            <p class="mb-0 fw-bold">Hoàng Nam</p>
+                                            <small class="text-muted">nam.h@company.com</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="badge rounded-pill bg-danger-subtle text-danger">Super
+                                    Admin</span>
+                                </td>
+                                <td class="small text-muted">2 phút trước</td>
+                                <td>
+                                    <i class="bi bi-three-dots-vertical cursor-pointer"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="https://i.pravatar.cc/150?u=15"
+                                             class="rounded-circle"
+                                             width="35">
+                                        <div>
+                                            <p class="mb-0 fw-bold">Minh Thu</p>
+                                            <small class="text-muted">thu.m@company.com</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge rounded-pill bg-info-subtle text-info">Editor</span></td>
+                                <td class="small text-muted">1 giờ trước</td>
+                                <td>
+                                    <i class="bi bi-three-dots-vertical cursor-pointer"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-white p-3">
+                    <h6 class="fw-bold mb-0">Nhật ký hệ thống</h6>
+                </div>
+                <div class="card-body p-3">
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="text-primary fs-4">
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 small fw-bold">Sản phẩm mới được thêm</p>
+                            <small class="text-muted">Bởi Hoàng Nam • 10:25 AM</small>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="text-danger fs-4">
+                            <i class="bi bi-shield-slash"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 small fw-bold">Đăng nhập thất bại (IP: 192.168...)</p>
+                            <small class="text-muted">Cảnh báo bảo mật • 09:12 AM</small>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mb-4">
+                        <div class="text-success fs-4">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <div>
+                            <p class="mb-0 small fw-bold">Cập nhật cấu hình hệ thống</p>
+                            <small class="text-muted">Tự động • 08:00 AM</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-light w-100 btn-sm text-primary fw-bold">Xem tất cả nhật ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

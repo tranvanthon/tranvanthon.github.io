@@ -1,0 +1,11 @@
+<div class="p-4 mb-3">{% include "partials/base/navbar.html" with only_logo=True %}</div>
+<span class="text-center {% if request.user.role == 'admin' %}bg-danger-subtle text-danger {% elif request.user.role == 'staff' %}bg-info-subtle text-info{% else %}bg-primary-subtle text-primary{% endif %}">
+    Vai trò:
+    {% if request.user.role == 'admin' %}
+        Quản trị hệ thống
+    {% elif request.user.role == 'staff' %}
+        Nhân viên
+    {% else %}
+        Khách hàng
+    {% endif %}
+</span>

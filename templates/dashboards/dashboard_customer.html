@@ -1,0 +1,10 @@
+{% extends 'dashboards/dashboard_base.html' %}
+{% block topbar %}
+  {% include "partials/dashboard/layout/topbar.html" %}
+{% endblock %}
+{% block sidebar %}
+  {% include "partials/dashboard/layout/sidebar_customer.html" %}
+{% endblock sidebar %}
+{% block main_content %}
+  {% include current_partial %}
+{% endblock %}

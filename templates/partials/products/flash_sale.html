@@ -1,0 +1,437 @@
+<!-- Flash Sale -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <!-- Header -->
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+            <div class="d-flex align-items-center gap-3">
+                <h4 class="fw-bold mb-0" style="color: #d41f31;"><i class="bi bi-lightning-fill me-2"></i>FLASH SALE</h4>
+                <span class="badge bg-danger rounded-pill px-3 py-2">GIẢM ĐẾN 50%</span>
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-2">ONLINE ONLY</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <span class="fw-bold small">Chỉ còn:</span>
+                <div class="flash-timer bg-dark text-white px-3 py-1 rounded"
+                     id="flashTimer">
+                    <span id="hours">00</span> : <span id="minutes">37</span> : <span id="seconds">58</span>
+                </div>
+                <div class="d-flex gap-1">
+                    <button class="btn btn-outline-danger btn-sm rounded-pill px-3"
+                            onclick="alert('Sắp diễn ra lúc 12:00')">12:00</button>
+                    <button class="btn btn-outline-danger btn-sm rounded-pill px-3"
+                            onclick="alert('Sắp diễn ra lúc 15:00')">15:00</button>
+                    <button class="btn btn-outline-danger btn-sm rounded-pill px-3"
+                            onclick="alert('Sắp diễn ra lúc 18:00')">18:00</button>
+                </div>
+            </div>
+        </div>
+        <!-- Categories Filter -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="btn btn-sm btn-danger rounded-pill px-4"
+                    onclick="filterProducts('all')">Tất cả</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('phone')">Điện Thoại</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('apple')">Apple</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('laptop')">Laptop</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('accessory')">Phụ Kiện</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('watch')">Đồng Hồ</button>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-4"
+                    onclick="filterProducts('pc')">PC, Máy in</button>
+        </div>
+        <!-- Products Grid -->
+        <div class="row g-3" id="flashSaleProducts">
+            <!-- Product 1 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="phone">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400"
+                             class="product-img w-100"
+                             alt="Samsung Galaxy A07"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-8%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Samsung Galaxy A07</h6>
+                        <p class="small text-muted mb-1">6GB/128GB</p>
+                        <div class="fw-bold text-primary">3.540.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 0%;">
+                                    <span class="fire-icon me-3">🔥</span>
+                                    <span class="stock-text">Còn 0/10</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-outline-danger rounded-pill w-100"
+                                        onclick="alert('Xem chi tiết Samsung Galaxy A07')">Xem chi tiết</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="phone">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400"
+                             class="product-img w-100"
+                             alt="vivo V50 Lite"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-15%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">vivo V50 Lite 5G</h6>
+                        <p class="small text-muted mb-1">8GB/256GB</p>
+                        <div class="fw-bold text-primary">8.290.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay vivo V50 Lite 5G')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="apple">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+                             class="product-img w-100"
+                             alt="AirPods Max"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-14%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">AirPods Max cổng USB C</h6>
+                        <p class="small text-muted mb-1">&nbsp;</p>
+                        <div class="fw-bold text-primary">12.890.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 10/10 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay AirPods Max')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="laptop">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400"
+                             class="product-img w-100"
+                             alt="HP 15"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-14%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">HP 15 fd1037TU Core 7</h6>
+                        <p class="small text-muted mb-1">150U (9Z2W5PA)</p>
+                        <div class="fw-bold text-primary">22.490.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay HP 15')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item"
+                 data-category="accessory">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=400"
+                             class="product-img w-100"
+                             alt="Camera IP"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-40%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Camera IP 360 Độ IMOU</h6>
+                        <p class="small text-muted mb-1">TA32CP-L</p>
+                        <div class="fw-bold text-primary">450.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 43%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 13/30 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay Camera IP')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="watch">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+                             class="product-img w-100"
+                             alt="Masstel Smart Hero"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-16%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Masstel Smart Hero Star</h6>
+                        <p class="small text-muted mb-1">47mm dây silicone</p>
+                        <div class="fw-bold text-primary">990.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay Masstel Smart Hero')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Second Row -->
+        <div class="row g-3 mt-2">
+            <!-- Product 7 - OPPO -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="phone">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400"
+                             class="product-img w-100"
+                             alt="OPPO A6x"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-4%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">OPPO A6x 4GB/128GB</h6>
+                        <p class="small text-muted mb-1">&nbsp;</p>
+                        <div class="fw-bold text-primary">5.740.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 30%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 3/10</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-outline-danger rounded-pill w-100"
+                                        onclick="alert('Xem chi tiết OPPO A6x')">Xem chi tiết</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 - iPhone -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="apple">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400"
+                             class="product-img w-100"
+                             alt="iPhone 16"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-16%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">iPhone 16 512GB</h6>
+                        <p class="small text-muted mb-1">&nbsp;</p>
+                        <div class="fw-bold text-primary">21.990.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 80%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 8/10 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay iPhone 16')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 9 - Apple Watch -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="apple">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1546868871-0f935769375e?w=400"
+                             class="product-img w-100"
+                             alt="Apple Watch"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-30%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Apple Watch Ultra 3 GPS</h6>
+                        <p class="small text-muted mb-1">+ Cellular 49mm viền...</p>
+                        <div class="fw-bold text-primary">22.990.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay Apple Watch Ultra 3')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 10 - Máy in -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="pc">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400"
+                             class="product-img w-100"
+                             alt="Máy in nhiệt"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Máy in nhiệt HPRT FT800</h6>
+                        <p class="small text-muted mb-1">Wifi</p>
+                        <div class="fw-bold text-primary">1.590.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 10/10 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay Máy in nhiệt')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 11 - Quạt -->
+            <div class="col-6 col-md-4 col-lg-2 product-item"
+                 data-category="accessory">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1606735382038-4acd89545882?w=400"
+                             class="product-img w-100"
+                             alt="Quạt cảm tay"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">Quạt cảm tay AVA+ JF-203</h6>
+                        <p class="small text-muted mb-1">&nbsp;</p>
+                        <div class="fw-bold text-primary">310.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay Quạt cảm tay')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 12 - CITIZEN -->
+            <div class="col-6 col-md-4 col-lg-2 product-item" data-category="watch">
+                <div class="product-card bg-white h-100 position-relative">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400"
+                             class="product-img w-100"
+                             alt="CITIZEN"
+                             style="height: 150px;
+                                    object-fit: contain;
+                                    background: #f8f9fa">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">-22%</span>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h6 class="fw-bold mb-0 small">CITIZEN 46 mm Nam</h6>
+                        <p class="small text-muted mb-1">BN2031-85E</p>
+                        <div class="fw-bold text-primary">14.650.000₫</div>
+                        <div class="mt-2">
+                            <!-- Fire Slider with stock info -->
+                            <div class="fire-slider">
+                                <div class="fire-slider-track" style="width: 100%;">
+                                    <span class="fire-icon">🔥</span>
+                                    <span class="stock-text">Còn 5/5 suất</span>
+                                </div>
+                            </div>
+                            <div class="mt-1">
+                                <button class="btn btn-sm btn-danger rounded-pill w-100"
+                                        onclick="alert('Mua ngay CITIZEN')">Mua ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

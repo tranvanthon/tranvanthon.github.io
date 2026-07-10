@@ -1,0 +1,85 @@
+@media (max-width: 991.98px) {
+  /* Tắt Hover trên mobile */
+  .nav-item.dropdown-mega:hover .mega-menu,
+  .nav-action-dropdown:hover .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transform: none;
+  }
+
+  .cart-global {
+    order: 2;
+    margin-left: auto;
+  }
+
+  /* Show Dropdown khi click trên Mobile - cần JS để toggle class 'show' */
+  .mega-menu.show,
+  .dropdown-content.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(10px) !important;
+    position: absolute !important;
+    background: white !important;
+    z-index: 2000 !important;
+  }
+
+  .dropdown-content.show {
+    min-width: 280px !important;
+    max-width: 320px !important;
+    right: -20px;
+  }
+
+  /* Search Mobile */
+  .search-mobile-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+  }
+
+  .search-mobile-container.active {
+    display: block;
+  }
+
+  .mega-menu.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    position: relative;
+  }
+
+  /* Badge giỏ hàng trên mobile */
+  .nav-action-dropdown .badge {
+    top: 1px !important;
+    left: 11px !important;
+    transform: translate(50%, -50%) !important;
+    font-size: 0.75rem;
+    border: solid 1px var(--bs-white);
+  }
+
+}
+
+  .filter-sidebar {
+    display: none;
+  }
+
+  .category-container {
+    padding-top: 20px;
+  }
+
+  .sort-bar {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .hero-wrapper .row {
+    height: auto;
+  }
+}

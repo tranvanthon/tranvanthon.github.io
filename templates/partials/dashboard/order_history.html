@@ -1,0 +1,47 @@
+<!-- Order History -->
+{% load format_filter %}
+<section>
+    <h3 class="fw-bold mb-4">Lịch sử đơn hàng</h3>
+    <div class="card shadow-sm border-0">
+        <div class="table-responsive p-3">
+            <table class="table align-middle">
+                <thead>
+                    <tr class="text-muted small">
+                        <th>MÃ ĐƠN</th>
+                        <th>NGÀY ĐẶT</th>
+                        <th>SẢN PHẨM</th>
+                        <th>TỔNG TIỀN</th>
+                        <th>TRẠNG THÁI</th>
+                        <th>THAO TÁC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in user_orders %}
+                        <tr>
+                            <td>
+                                <span class="fw-bold">{{ order.order_number }}</span>
+                            </td>
+                            <td>{{ order.created_at|date:"d/m/Y" }}</td>
+                            <td>Tai nghe Bluetooth x{{ order.items_count }}</td>
+                            <td>{{ order.total_amount|dot_thousands }}đ</td>
+                            <td>
+                                <span class="badge {{ order.status_badge_class }}">{{ order.status_display }}</span>
+                            </td>
+                            <td>
+                                <a href="{% url 'store:order_tracking' order.id %}"
+                                   class="btn btn-sm btn-outline-primary">Theo dõi</a>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-secondary">Mua lại</button>
+                            </td>
+                        </tr>
+                    {% empty %}
+                    </tbody>
+                </table>
+                <div class="col-12 text-center py-5">
+                    <p class="text-muted mb-0">Bạn không có đơn hàng nào ở thời điểm hiện tại.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

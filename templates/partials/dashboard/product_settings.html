@@ -1,0 +1,149 @@
+<section>
+    <div class="d-flex justify-content-between align-items-start mb-4">
+        <div>
+            <div class="d-flex align-items-center gap-2 mb-1">
+                <button class="btn btn-sm btn-light rounded-circle"
+                        onclick="showPage('products', this)">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <h3 class="fw-bold mb-0">SmartWatch Series 9 Pro</h3>
+            </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 small">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-primary">Sản phẩm</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-decoration-none text-primary">Điện tử</a>
+                    </li>
+                    <li class="breadcrumb-item active">SmartWatch</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="d-flex gap-2">
+            <button class="btn btn-outline-danger px-3"><i class="bi bi-trash me-2"></i>Xóa</button>
+            <button class="btn btn-primary px-4"><i class="bi bi-save me-2"></i>Lưu thay đổi</button>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0 p-4 mb-4">
+                <h6 class="fw-bold mb-3">Hình ảnh sản phẩm</h6>
+                <div class="row g-2">
+                    <div class="col-md-8">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800"
+                             class="img-fluid rounded-3 border"
+                             alt="Main image">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex flex-column gap-2">
+                            <div class="border rounded-3 p-2 bg-light text-center">
+                                <i class="bi bi-plus-lg fs-2 text-muted"></i>
+                            </div>
+                            <div class="border rounded-3 p-2 bg-light text-center">
+                                <i class="bi bi-plus-lg fs-2 text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-sm border-0 p-4">
+                <h6 class="fw-bold mb-3">Mô tả chi tiết</h6>
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Tóm tắt ngắn</label>
+                    <input type="text"
+                           class="form-control"
+                           value="Đồng hồ thông minh thế hệ mới với màn hình OLED cực sáng.">
+                </div>
+                <div>
+                    <label class="form-label small text-muted">Nội dung sản phẩm</label>
+                    <div class="border rounded-3 p-3 bg-light" style="min-height: 200px;">
+                        <p>Sản phẩm bao gồm các tính năng chính:</p>
+                        <ul>
+                            <li>Đo nhịp tim, nồng độ oxy trong máu.</li>
+                            <li>Kháng nước chuẩn IP68.</li>
+                            <li>Thời lượng pin lên đến 48 giờ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm border-0 p-4 mb-4">
+                <h6 class="fw-bold mb-3 text-primary">Giá & Trạng thái</h6>
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Giá bán hiện tại</label>
+                    <div class="input-group">
+                        <input type="text"
+                               class="form-control fw-bold text-primary fs-5"
+                               value="2.450.000">
+                        <span class="input-group-text bg-white">đ</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Giá gốc (để tính giảm giá)</label>
+                    <input type="text" class="form-control text-muted" value="3.000.000">
+                </div>
+                <hr>
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label">Hiển thị trên website</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">Sản phẩm nổi bật (Hot)</label>
+                </div>
+            </div>
+            <div class="card shadow-sm border-0 p-4 mb-4">
+                <h6 class="fw-bold mb-3">Kho hàng & Biến thể</h6>
+                <div class="row g-2 mb-3">
+                    <div class="col-6">
+                        <label class="form-label small text-muted">Số lượng tồn</label>
+                        <input type="number" class="form-control" value="120">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small text-muted">Mã SKU</label>
+                        <input type="text" class="form-control" value="SW-9PRO-BLUE">
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Màu sắc hiện có</label>
+                    <div class="d-flex gap-2">
+                        <div class="rounded-circle border"
+                             style="width:25px;
+                                    height:25px;
+                                    background: #000"></div>
+                        <div class="rounded-circle border"
+                             style="width:25px;
+                                    height:25px;
+                                    background: #278aae"></div>
+                        <div class="rounded-circle border text-center"
+                             style="width:25px;
+                                    height:25px">
+                            <i class="bi bi-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-sm border-0 p-4">
+                <h6 class="fw-bold mb-3">Phân loại</h6>
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Thương hiệu</label>
+                    <select class="form-select">
+                        <option>Apple</option>
+                        <option selected>Samsung</option>
+                        <option>Xiaomi</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label small text-muted">Tags</label>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-secondary-subtle text-dark">Tech</span>
+                        <span class="badge bg-secondary-subtle text-dark">Watch</span>
+                        <span class="badge bg-secondary-subtle text-dark">New 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

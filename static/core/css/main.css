@@ -1,0 +1,44 @@
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: #fff;
+}
+
+/* Chỉ áp dụng cho các thành phần tương tác */
+a,
+button,
+.btn,
+.card,
+.nav-link {
+  transition:
+    background-color 0.25s ease,
+    color 0.2s ease;
+}
+
+.nav-link {
+  color: #6a7d8d;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-color);
+  background: rgba(67, 97, 238, 0.05);
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-blue);
+  border-color: var(--bs-blue);
+}

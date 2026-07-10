@@ -1,0 +1,35 @@
+{% load format_filter %}
+<a href="#" class="text-dark position-relative p-2">
+    <i class="bi bi-cart3 fs-4"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {{ cart_items_count|default:"0" }}
+    </span>
+</a>
+{% for item in cart_items %}
+    <div class="dropdown-content">
+        <h6 class="fw-bold mb-3">Giỏ hàng của bạn</h6>
+        <div class="cart-item-mini">
+            <img src="{{ item.product.main_image_url }}" alt="{{ item.product.name }}">
+            <div>
+                <p class="mb-0 fw-bold small">{{ item.product.name }}</p>
+                <p class="mb-0 text-primary small">{{ item.quantity }} x {{ item.price|dot_thousands }}đ</p>
+                <form hx-post="{% url 'store:remove_from_cart' item.id %}"
+                      hx-target="closest .cart-item"
+                      hx-swap="outerHTML">
+                    {% csrf_token %}
+                    <button type="submit"
+                            class="btn btn-outline-danger btn-sm border-0"
+                            title="Xoá khỏi giỏ hàng">
+                        <i class="bi bi-bag-x-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="d-grid gap-2"><a href="{% url 'store:cart_detail' %}" class="btn btn-primary btn-sm">Thanh toán ngay</a></div>
+    </div>
+{% empty %}
+    <div class="dropdown-content">
+        <span class="cart-empty">🛒</span>
+        <p class="text-muted small mb-3 text-center">⚠️ Giỏ hàng đang trống!</p>
+    </div>
+{% endfor %}

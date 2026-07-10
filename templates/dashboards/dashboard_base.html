@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>{% include "partials/base/header.html" %}</head>
+    <body>
+        {% include "partials/base/messages.html" %}
+        <div class="sidebar shadow-sm">
+            <div class="nav flex-column">
+                {% block topbar %}{% endblock %}
+                {% block sidebar %}{% endblock %}
+            </div>
+        </div>
+        <div class="main-content" id="page-content">
+            {% block main_content %}{% endblock %}
+        </div>
+        {% include "partials/base/js.html" %}
+    </body>
+</html>

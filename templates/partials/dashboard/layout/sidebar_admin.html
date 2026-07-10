@@ -1,0 +1,85 @@
+<div class="nav-link"
+     hx-get="{% url "store:admin_overview" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-speedometer2"></i> Tổng quan
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_orders" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-receipt"></i> Lịch sử đơn hàng
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_products" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-box-seam"></i> Sản phẩm của bạn
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_wishlist" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-heart"></i> Sản phẩm yêu thích
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_coupons" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-ticket-perforated"></i> Mã giảm
+     giá
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_address" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-geo-alt"></i> Sổ địa chỉ
+</div>
+<hr class="mx-3">
+<div class="nav-link text-danger fw-bold"
+     hx-get="{% url "store:admin_admin_settings" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-shield-lock"></i> Admin Panel
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_settings" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-gear"></i> Cài đặt
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_account" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-person-circle"></i> Hồ sơ của tôi
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_category_settings" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-info-circle"></i> Cài đặt
+     danh mục
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_product_settings" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true">
+     <i class="bi bi-file-earmark-medical"></i> Cài đặt sản phẩm
+</div>
+<div class="nav-link"
+     hx-get="{% url "store:admin_report" %}"
+     hx-target="#page-content"
+     hx-swap="innerHTML"
+     hx-push-url="true"><i class="bi bi-pie-chart"></i> Báo cáo</div>

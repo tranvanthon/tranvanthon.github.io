@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>{% include "partials/base/header.html" %}</head>
+    <body>
+        {% include "partials/base/messages.html" %}
+        {% block hero %}{% endblock %}
+        {% block content %}{% endblock %}
+        {% block footer %}{% endblock %}
+        {% include "partials/base/js.html" %}
+    </body>
+</html>

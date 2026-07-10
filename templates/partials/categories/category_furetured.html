@@ -1,0 +1,21 @@
+<section class="py-5">
+    <div class="container">
+        <h3 class="fw-bold mb-4">Danh mục nổi bật</h3>
+        <div class="row g-3">
+            {% for category in featured_categories %}
+                <div class="col-6 col-md-3">
+                    <a href="{% url 'store:category_detail' category.slug %}"
+                       class="cat-item shadow-sm">
+                        {% if category.icon_code %}
+                            <i class="{{ category.icon_code }} fs-2"></i>
+                        {% else %}
+                            💼
+                        {% endif %}
+                        <br>
+                        <b>{{ category.name }}</b>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

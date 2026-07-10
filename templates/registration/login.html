@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+{% block content %}
+    <div class="wrapper wow fadeInLeft" data-wow-delay="0.1s">
+        <div class="title">{{ title }}</div>
+        <form class="p-3 mt-3"
+              action="{% url 'account_login' %}"
+              method="post"
+              autocomplete="off">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Thông báo!</strong> Email hoặc mật khẩu không đúng.
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                </div>
+            {% endif %}
+            <div class="form-field d-flex align-items-center">
+                <span class="bi bi-person me-2 fs-5 text-muted disabled"></span>
+                {{ form.username }}
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="bi bi-key-fill ms-2 fs-5 text-muted disabled"></span>
+                {{ form.password }}
+                <span class="eye"><span class="bi bi-eye toggle-password me-3 fs-5 text-muted"
+      data-target="id_password"></span></span>
+            </div>
+            <button class="btn mt-3">{{ title }}</button>
+        </form>
+        <div class="text-center fs-6">
+            <a href="{% url 'password_reset' %}">Quên mật khẩu?</a> or <a href="{% url 'account_signup' %}">Đăng ký</a>
+        </div>
+        <div class="divider small">HOẶC</div>
+        <div class="d-grid gap-2">
+            <a href="{% provider_login_url 'google' %}" class="social-login-btn">
+                <img src="{% static "images/icon/google.png" %}" width="40" alt="Google">
+                Đăng nhập với Google
+            </a>
+        </div>
+    </div>
+{% endblock content %}

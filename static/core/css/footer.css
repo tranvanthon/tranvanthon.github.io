@@ -1,0 +1,40 @@
+/* Footer */
+footer {
+  background: var(--bs-blue);
+  color: #fff;
+  padding: 40px 0 20px;
+}
+footer a {
+  color: #ccc;
+}
+footer a:hover {
+  color: #fff;
+}
+.social-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+.social-icon:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+/* Flash Sale */
+.flash-sale-timer {
+  background: #f44336;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.flash-sale-timer i {
+  margin-right: 8px;
+}

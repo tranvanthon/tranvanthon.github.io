@@ -1,0 +1,14 @@
+{% include "base.html" %}
+{% block content %}
+  <div class="topbar">{% include "partials/dashboard/layout/topbar.html" %}</div>
+  <div class="sidebar">{% include "partials/dashboard/layout/sidebar.html" %}</div>
+  <div class="main-content">
+    <div id="page-content">
+      {% include "partials/dashboard/overview.html" %}
+      {% include "partials/dashboard/account_info.html" %}
+      {% include "partials/dashboard/address_book.html" %}
+      {% include "partials/dashboard/order_history.html" %}
+      {% include "partials/dashboard/wishlist.html" %}
+    </div>
+  </div>
+{% endblock %}

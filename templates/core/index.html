@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% include "partials/base/navbar.html" %}
+    {% comment %} {% include "partials/htmx_django.html" %} {% endcomment %}
+    {% comment %} carausel {% endcomment %}
+    {% include 'partials/base/hero.html' %}
+    {% comment %} flash sale {% endcomment %}
+    {% include "partials/products/flash_sale.html" %}
+    {% comment %} Danh mục nổi bật {% endcomment %}
+    {% include "partials/categories/category_furetured.html" %}
+    {% include "partials/products/product_furetured.html" %}
+    {% comment %} recommended for you {% endcomment %}
+    {% include "partials/products/product_recommended.html" %}
+    {% comment %} People also search {% endcomment %}
+    {% include "partials/filter/people_search.html" %}
+{% endblock content %}
+{% block footer %}
+    {% include "partials/base/footer.html" %}
+{% endblock footer %}

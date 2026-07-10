@@ -1,0 +1,89 @@
+{% load static %}
+{% if only_logo %}
+    {# Chỉ hiển thị logo #}
+    <a class="navbar-brand fw-bold text-primary fs-3 text-center" href="/">
+        <img src="{% static "images/icon/logo.ico" %}" alt="logo">
+        -STORE
+    </a>
+{% else %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-3" href="/">
+                <img src="{% static "images/icon/logo.ico" %}" alt="logo">
+                -STORE
+            </a>
+            <div class="d-flex d-lg-none align-items-center gap-1 ms-auto me-2">
+                <button class="btn p-2" id="btnToggleSearchMobile">
+                    <i class="bi bi-search fs-4"></i>
+                </button>
+                <div class="nav-action-dropdown">{% include "partials/carts/cart_dropdown.html" %}</div>
+                <div class="nav-action-dropdown">
+                    <div class="nav-action-dropdown">{% include 'partials/profiles/profile_dropdown.html' %}</div>
+                </div>
+            </div>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown-mega">
+                        <a class="nav-link" href="#"><i class="bi bi-grid"></i> Danh mục <i class="bi bi-chevron-down small"></i></a>
+                        <div class="mega-menu">
+                            <div class="container">
+                                <div class="row g-4">
+                                    {% for parent in nav_categories %}
+                                        <div class="col-md-3">
+                                            <h6 class="fw-bold text-primary mb-3 border-bottom pb-2">
+                                                {% if parent.icon_code %}<i class="{{ parent.icon_code }} me-1"></i>{% endif %}
+                                                {{ parent.name }}
+                                            </h6>
+                                            {% for child in parent.children.all %}
+                                                {% if child.is_active %}
+                                                    <a href="{% url 'store:category_detail' child.slug %}"
+                                                       class="mega-menu-item">
+                                                        <div class="mega-menu-icon">
+                                                            <i class="{{ child.icon_code|default:'bi bi-folder' }}"></i>
+                                                        </div>
+                                                        <span class="mega-menu-title">{{ child.name }}</span>
+                                                    </a>
+                                                {% endif %}
+                                            {% empty %}
+                                                <a href="{% url 'store:category_detail' parent.slug %}"
+                                                   class="mega-menu-item">
+                                                    <div class="mega-menu-icon">
+                                                        <i class="{{ parent.icon_code|default:'bi bi-folder' }}"></i>
+                                                    </div>
+                                                    <span class="mega-menu-title">{{ parent.name }}</span>
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    {% empty %}
+                                        <div class="col-12 text-muted small">Chưa có danh mục.</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-fire"></i> Khuyến mãi</a></li>
+                </ul>
+                <div class="d-none d-lg-flex align-items-center gap-3">
+                    {% include "partials/filter/search_form.html" %}
+                    <div class="nav-action-dropdown" id="cart-dropdown">{% include 'partials/carts/cart_dropdown.html' %}</div>
+                </div>
+                <div class="nav-action-dropdown d-md-none d-lg-block">
+                    <div class="nav-action-dropdown">{% include 'partials/profiles/profile_dropdown.html' %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-mobile-container d-lg-none" id="searchMobileBox">
+        {% include "partials/filter/search_form.html" %}
+    </div>
+</nav>
+<div class="search-wrapper container" aria-live="polite">
+    <div id="navbar-search-results"></div>
+</div>
+{% endif %}

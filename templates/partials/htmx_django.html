@@ -1,0 +1,28 @@
+<h1 class="text-center text-info">HTMX</h1>
+<div class="d-flex justify-content-center align-items-center">
+    <button class="btn btn-info"
+            hx-get="/hello/"
+            hx-target="#result"
+            hx-swap="delete">Click me để thấy hello</button>
+    <br>
+    <a hx-get="/profile/" hx-target="#main">Hồ sơ</a>
+</div>
+<div id="result">
+    <tbody>
+        <tr>C</tr>
+    </tbody>
+</div>
+<div id="main"></div>
+{% comment %} <button hx-get="{% url 'product_list' %}" hx-target="#products" class="btn btn-primary" data-bs-toggle="modal">Hiển thị sản phẩm</button> {% endcomment %}
+<button class="btn btn-primary"
+        id="load-products"
+        hx-get="{% url 'product_list' %}"
+        hx-target="#products">Load products</button>
+<div id="products"></div>
+<button hx-get="{% url 'product_list' %}" hx-target=".product-body">product-body</button>
+<div class="product-body"></div>
+<table class="table">
+    <tbody class="product-body">
+        danh sach hiển thị ở đây
+    </tbody>
+</table>

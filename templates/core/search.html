@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} {% block navbar %}
+  {% include 'partials/base/navbar.html' %}
+{% endblock %} {% endcomment %}
+{% block content %}
+  <div id="search-results">{% include 'partials/filter/search_results.html' %}</div>
+{% endblock %}

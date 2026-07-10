@@ -1,0 +1,289 @@
+/* Mega Menu Desktop */
+.nav-item.dropdown-mega {
+  position: static;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 2px solid var(--bs-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 0;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+}
+
+.nav-item.dropdown-mega:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+}
+/* fire sale */
+.bi.bi-fire {
+  animation: fireBounce 0.6s ease-in-out infinite alternate;
+  color: #ff6600; /* orange */
+  filter: drop-shadow(0 0 6px rgba(255, 100, 0, 0.6));
+}
+
+/* Dropdown Action (Cart, Account) */
+.nav-action-dropdown {
+  position: relative;
+}
+
+/* Dropdown chung - ĐÃ SỬA */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 450px;
+  width: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+/* Dropdown giỏ hàng - ưu tiên rộng hơn */
+.nav-action-dropdown .dropdown-content {
+  min-width: 360px;
+  max-width: 480px;
+}
+
+/* Dropdown account */
+.nav-action-dropdown .dropdown-content[style*="width: 300px"] {
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.nav-action-dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+/* Account Link Styles */
+.account-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  color: var(--bs-blue);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.account-link:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+/* Mega Menu Items */
+.mega-menu-item {
+  text-decoration: none;
+  color: var(--bs-blue);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.mega-menu-item:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  color: var(--bs-primary);
+}
+
+.mega-menu-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--bg-light);
+  color: var(--bs-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.mega-menu-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hero & Sections */
+.hero-wrapper {
+  margin-bottom: 2rem;
+}
+
+.hero-slider-container {
+  height: auto;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.promo-banner {
+  height: calc(50% - 10px);
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  transition: 0.3s;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.promo-banner div {
+  position: relative;
+  z-index: 2;
+}
+
+.product-card {
+  border: 1px solid var(--bs-secondary);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cat-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--bg-light);
+  text-decoration: none;
+  color: var(--bs-blue);
+  display: block;
+  transition: 0.3s;
+}
+
+.cat-item:hover {
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+/* Category & Product Layout */
+.category-container {
+  padding: 40px 0;
+}
+
+.filter-sidebar {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.filter-group {
+  border-bottom: 1px solid var(--bs-secondary);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--bs-blue);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.sort-bar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+
+.hero-wrapper .row {
+  min-height: 400px;
+  height: auto;
+}
+
+/* Đảm bảo navbar không bị tràn */
+.navbar .container,
+.navbar .container-fluid {
+  overflow: visible !important;
+}
+
+.navbar-collapse {
+  overflow: visible !important;
+}
+
+.cart-global {
+  display: block;
+}
+/* Cart Mini Style */
+.cart-item-mini {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--bs-secondary);
+}
+.cart-item-mini img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.account-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  color: var(--bs-blue);
+  text-decoration: none;
+  border-radius: 8px;
+}
+.cart-empty {
+  font-size: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

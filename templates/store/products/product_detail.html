@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+{% load format_filter %}
+{% block title %}
+  {% if category %}
+    {{ category.name }} - Gtbooks Store
+  {% else %}
+    All product - Gtbooks Store
+  {% endif %}
+{% endblock %}
+{% block navbar %}
+  {% include 'partials/navbar.html' %}
+{% endblock %}
+{% block content %}
+  <div class="product-detail-container">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          {% for name, url in breadcrumb.items %}
+            <li class="breadcrumb-item {% if forloop.last %}active{% endif %}">
+              {% if not forloop.last %}
+                <a href="{{ url }}" class="text-decoration-none">{{ name }}</a>
+              {% else %}
+                {{ name }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="product-gallery">
+            <div class="main-img-container shadow-sm">
+              <img src="{{ product.main_image.medium_url }}"
+                   class="w-100"
+                   id="mainImage"
+                   alt="{{ product.name }}" />
+            </div>
+            <div class="d-flex gap-2">
+              <div class="gallery">
+                {% for image in product.images.all %}
+                  <img src="{{ image.thumb_url }}"
+                       data-medium="{{ image.medium_url }}"
+                       class="thumb-img {% if image.is_main %}active{% endif %}"
+                       onclick="changeImg(this)" />
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="product-info-header">
+            <h1 class="fw-bold h2 mb-2">{{ product.name }}</h1>
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(158 đánh giá)</span>
+              </div>
+              <span class="text-muted">|</span>
+              <span class="text-success small fw-bold">Đã bán 1.2k</span>
+            </div>
+            <div class="d-flex align-items-end">
+              <span class="price-tag">{{ product.price|dot_thousands }} đ</span>
+              <span class="old-price">{{ product.price_sale|dot_thousands }}đ</span>
+              <span class="badge bg-danger ms-3 mb-2">-6%</span>
+            </div>
+          </div>
+          <div class="variant-picker">
+            <p class="fw-bold small mb-2">Chọn màu sắc:</p>
+            <div class="d-flex flex-wrap">
+              {% comment %} {% for value, label in product.ColorChoice.choices %}
+                <button class="variant-btn {% if product.color == value %}active{% endif %}">{{ label }}</button>
+              {% endfor %} {% endcomment %}
+              <p>Màu: {{ selected_variant.get_color_display }}</p>
+            </div>
+          </div>
+          <p>
+            {% if product.is_in_stock %}
+              <span style="color:green;">Còn hàng</span>
+            {% else %}
+              <span style="color:gray;">Hết hàng</span>
+            {% endif %}
+          </p>
+          <div class="variant-picker">
+            <p class="fw-bold small mb-2">Dung lượng:</p>
+            <div class="d-flex flex-wrap">
+              <button class="variant-btn active">256GB</button>
+              <button class="variant-btn">512GB</button>
+              <button class="variant-btn">1TB</button>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="quantity-input">
+              <div class="input-group">
+                <button class="btn btn-outline-secondary border-secondary-subtle"
+                        type="button">-</button>
+                <input type="text"
+                       class="form-control text-center border-secondary-subtle"
+                       value="1" />
+                <button class="btn btn-outline-secondary border-secondary-subtle"
+                        type="button">+</button>
+              </div>
+            </div>
+            <span class="text-muted small">89 sản phẩm có sẵn</span>
+          </div>
+          <div class="row g-2 mb-5">
+            <div class="col-md-6">
+              <form action="{% url 'store:add_to_cart' product.slug %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-danger btn-buy-now w-100">Thêm vào giỏ hàng</button>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <button class="btn btn-primary btn-buy-now w-100">Mua ngay</button>
+            </div>
+          </div>
+          <div class="bg-light p-3 rounded-3 d-flex justify-content-around text-center">
+            <div>
+              <i class="bi bi-truck text-primary fs-4"></i>
+              <p class="mb-0 x-small mt-1">Giao miễn phí</p>
+            </div>
+            <div>
+              <i class="bi bi-shield-check text-primary fs-4"></i>
+              <p class="mb-0 x-small mt-1">Bảo hành 12th</p>
+            </div>
+            <div>
+              <i class="bi bi-arrow-counterclockwise text-primary fs-4"></i>
+              <p class="mb-0 x-small mt-1">Đổi trả 30 ngày</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <ul class="nav nav-tabs mb-4" id="productTab" role="tablist">
+            <li class="nav-item">
+              <button class="nav-link active fw-bold px-4"
+                      data-bs-toggle="tab"
+                      data-bs-target="#desc">Mô tả sản phẩm</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link fw-bold px-4"
+                      data-bs-toggle="tab"
+                      data-bs-target="#specs">Thông số kỹ thuật</button>
+            </li>
+          </ul>
+          <div class="tab-content p-2" id="productTabContent">
+            <div class="tab-pane fade show active" id="desc">
+              <p>iPhone 15 Pro Max với khung viền Titan chuẩn hàng không vũ trụ cực nhẹ và bền bỉ. Chip A17 Pro mang lại hiệu năng chơi game chưa từng có...</p>
+              <img src="https://images.unsplash.com/photo-1695048133142-13c8ed4202c4?w=800"
+                   class="img-fluid rounded-3 my-3" />
+            </div>
+            <div class="tab-pane fade" id="specs">
+              <table class="table table-striped">
+                <tr>
+                  <td width="30%">Màn hình</td>
+                  <td>6.7 inch, OLED</td>
+                </tr>
+                <tr>
+                  <td>Camera sau</td>
+                  <td>48MP + 12MP + 12MP</td>
+                </tr>
+                <tr>
+                  <td>Chipset</td>
+                  <td>Apple A17 Pro</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <h4 class="fw-bold mb-4">So sánh giá với các đại lý khác</h4>
+          <div class="comparison-card shadow-sm bg-white">
+            <div class="table-responsive">
+              <table class="table align-middle mb-0 comparison-table">
+                <thead class="table-light">
+                  <tr>
+                    <th>Cửa hàng</th>
+                    <th>Phiên bản</th>
+                    <th>Giá bán</th>
+                    <th>Tình trạng</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1200px-Adidas_Logo.svg.png"
+                           class="store-logo"
+                           alt="Store A" />
+                    </td>
+                    <td class="small">256GB - Titan</td>
+                    <td class="price-low">32.490.000đ</td>
+                    <td>
+                      <span class="badge bg-success-subtle text-success">Còn hàng</span>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-primary rounded-pill">Đến nơi bán</button>
+                    </td>
+                  </tr>
+                  <tr class="table-primary">
+                    <td>
+                      <strong class="text-primary">E-STORE (Bạn)</strong>
+                    </td>
+                    <td class="small">256GB - Titan</td>
+                    <td>
+                      <strong class="text-primary">31.990.000đ</strong>
+                    </td>
+                    <td>
+                      <span class="badge bg-success">Giá rẻ nhất</span>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-dark rounded-pill">Đang xem</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="https://vcdn.tikicdn.com/ts/seller/ee/fa/a0/ad88132952d4a25102005073045c554a.png"
+                           class="store-logo"
+                           alt="Store B" />
+                    </td>
+                    <td class="small">256GB - Titan</td>
+                    <td>33.500.000đ</td>
+                    <td>
+                      <span class="badge bg-secondary-subtle text-secondary">Hết hàng</span>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-outline-secondary rounded-pill" disabled>Ghé thăm</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="related-products mt-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <h3 class="fw-bold mb-0">Sản phẩm cùng nhóm hàng</h3>
+        <a href="#" class="text-primary fw-bold text-decoration-none">Xem thêm <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="product-card bg-white h-100 shadow-sm border-0">
+            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400"
+                 class="product-img w-100"
+                 alt="Related" />
+            <div class="p-3">
+              <h6 class="fw-bold mb-1 small text-truncate">Samsung Galaxy S24 Ultra</h6>
+              <span class="fw-bold text-primary">28.990.000đ</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card bg-white h-100 shadow-sm border-0">
+            <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=400"
+                 class="product-img w-100"
+                 alt="Related" />
+            <div class="p-3">
+              <h6 class="fw-bold mb-1 small text-truncate">Google Pixel 8 Pro</h6>
+              <span class="fw-bold text-primary">19.500.000đ</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card bg-white h-100 shadow-sm border-0">
+            <img src="https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400"
+                 class="product-img w-100"
+                 alt="Related" />
+            <div class="p-3">
+              <h6 class="fw-bold mb-1 small text-truncate">Xiaomi 14 Ultra Chính hãng</h6>
+              <span class="fw-bold text-primary">25.990.000đ</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card bg-white h-100 shadow-sm border-0">
+            <img src="https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400"
+                 class="product-img w-100"
+                 alt="Related" />
+            <div class="p-3">
+              <h6 class="fw-bold mb-1 small text-truncate">iPhone 14 Pro Max 128GB</h6>
+              <span class="fw-bold text-primary">24.990.000đ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function changeImg(imgEl) {
+      const mainImage = document.getElementById('mainImage')
+      const nextSrc = imgEl.dataset.medium
+    
+      if (!mainImage || !nextSrc || mainImage.getAttribute('src') === nextSrc) {
+        return
+      }
+    
+      document.querySelectorAll('.thumb-img').forEach((img) => {
+        img.classList.remove('active')
+      })
+    
+      imgEl.classList.add('active')
+    
+      const preloadedImage = new Image()
+      mainImage.classList.add('is-changing')
+    
+      preloadedImage.onload = () => {
+        mainImage.src = nextSrc
+        requestAnimationFrame(() => {
+          mainImage.classList.remove('is-changing')
+        })
+      }
+    
+      preloadedImage.onerror = () => {
+        mainImage.classList.remove('is-changing')
+      }
+    
+      preloadedImage.src = nextSrc
+    }
+    function selectVariant(variantId) {
+      window.location.href = '?variant=' + variantId
+    }
+  </script>
+{% endblock %}
+{% block footer %}
+  {% include 'partials/base/footer.html' %}
+{% endblock %}

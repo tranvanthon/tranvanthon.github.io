@@ -1,0 +1,156 @@
+.eye {
+  cursor: pointer;
+}
+
+.social-login-btn {
+  border: 1px solid var(--bs-secondary);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.2s;
+  text-decoration: none;
+  color: var(--bs-blue);
+  font-weight: 500;
+}
+
+.social-login-btn:hover {
+  background-color: #f8f9fa;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--bs-secondary);
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.5em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.5em;
+}
+.wrapper {
+  max-width: 500px;
+  min-height: 300px;
+  margin: 80px auto;
+  padding: 40px 30px 30px 30px;
+  background-color: #ecf0f3;
+  border-radius: 15px;
+  box-shadow:
+    13px 13px 20px #cbced1,
+    -13px -13px 20px #fff;
+}
+
+.title {
+  margin: 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  box-shadow:
+    8px 8px 8px #cbced1,
+    -8px -8px 8px #fff;
+  border-radius: 25px;
+  padding: 5px;
+  font-weight: 600;
+  text-shadow:
+    2px 1px 4px #03a9f4,
+    1px 2px 4px #03a9f4,
+    -1px 2px 4px #03a9f4,
+    1px -2px 4px #03a9f4;
+}
+
+.wrapper .name {
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 1.3px;
+  padding-left: 10px;
+  color: #555;
+}
+
+.wrapper .form-field input {
+  width: 100%;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 10px 15px 10px 10px;
+  /* border: 1px solid red; */
+}
+
+.wrapper .form-field {
+  padding-left: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow:
+    inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #fff;
+}
+
+.wrapper .form-field .fas {
+  color: #555;
+}
+
+.wrapper .btn {
+  box-shadow: none;
+  width: 100%;
+  background-color: var(--bs-info);
+  color: var(--bs-white);
+  border-radius: 25px;
+  box-shadow:
+    3px 3px 3px #b1b1b1,
+    -3px -3px 3px #fff;
+  letter-spacing: 1.3px;
+  border: none;
+  font-size: 1.7rem;
+  padding: 3px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper .btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--bs-info);
+}
+
+.wrapper a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--bs-primary);
+}
+
+.wrapper a:hover {
+  color: var(--bs-hover);
+}
+
+.social {
+  width: 52px;
+  margin: auto;
+}
+
+.social img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--bs-box-shadow);
+  cursor: pointer;
+}
+
+.login-with::before {
+  content: "";
+  width: 15px;
+  height: 3px;
+  background-color: var(--bs-secondary);
+}
