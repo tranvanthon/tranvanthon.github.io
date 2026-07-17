@@ -4,8 +4,11 @@
     <body>
         {% include "partials/base/messages.html" %}
         <div class="sidebar shadow-sm">
-            <div class="nav flex-column">
-                {% block topbar %}{% endblock %}
+            <div class="topbar" id ="topbar">
+            {% block topbar %}{% endblock %}
+            </div>
+            <hr class="px-3">
+            <div class="nav flex-column"  id="sidebar" hx-swap-oob="true">
                 {% block sidebar %}{% endblock %}
             </div>
         </div>

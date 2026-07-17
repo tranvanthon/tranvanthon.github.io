@@ -1,3 +1,4 @@
+from copy import copy
 import unicodedata
 
 from django.contrib import messages
@@ -87,17 +88,23 @@ class DashboardCustomerBaseView(DashboardBaseView):
     def get_template_names(self):
 
         if self.request.htmx:
-            return self.config
+            return [self.template_name]
 
         return [self.template_name]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        pages = []
+
+        for config in CUSTOMER_PAGES.values():
+            item = copy(config)
+            item.active = item.page == self.page
+            pages.append(item)
 
         context["current_partial"] = self.config.template
         context["current_page"] = self.page
-        context["customer_pages"] = CUSTOMER_PAGES.values()
-        context.update(self.config.context(self.request))
+        context["customer_pages"] = pages
+        context.update(self.config.get_context(self.request))
 
         return context
 

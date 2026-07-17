@@ -27,7 +27,7 @@ ACCOUNT = DashboardPageConfig(
 PRODUCTS = DashboardPageConfig(
     page=CustomerPage.PRODUCTS,
     title="Sản phẩm",
-    icon="bi bi-person-circle",
+    icon="bi bi-box-seam",
     template="partials/dashboard/products.html",
     context=product_context,
 )
@@ -61,11 +61,12 @@ SETTINGS = DashboardPageConfig(
 )
 COUPONS = DashboardPageConfig(
     page=CustomerPage.COUPONS,
-    title="Cài đặt",
+    title="Mã giảm giá (Marketing)",
     icon="bi bi-ticket-perforated",
     template="partials/dashboard/coupons.html",
     context=coupons_context,
 )
+
 CUSTOMER_PAGES = {
     CustomerPage.OVERVIEW: OVERVIEW,
     CustomerPage.ORDERS: ORDERS,

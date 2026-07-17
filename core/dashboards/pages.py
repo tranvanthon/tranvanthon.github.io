@@ -2,6 +2,7 @@ from enum import StrEnum
 
 
 class CustomerPage(StrEnum):
+    SIDEBAR = "sidebar"
     OVERVIEW = "overview"
     PRODUCTS = "products"
     ORDERS = "orders"

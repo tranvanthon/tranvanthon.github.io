@@ -1,35 +1,11 @@
 {% for config in customer_pages %}
-     <div class="nav-link"
-          hx-get="{% url 'store:customer_partial' config.page %}"
+     <div class="nav-link-custom {% if config.active %}active{% endif %}"
+
+          hx-get="{{config.url}}"
+          hx-select="#page-content"
           hx-target="#page-content"
-          hx-swap="innerHTML">
+          hx-swap="innerHTML"
+          hx-push-url="true">
           <i class="{{ config.icon }}"></i> {{ config.title }}
      </div>
 {% endfor %}
-{% comment %} <div class="nav-link " hx-get="{% url "store:customer_overview" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     {{ objects }}
-     <i class="bi bi-speedometer2"></i> Tổng quan
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_orders" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-receipt"></i> Lịch sử đơn hàng
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_products" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-box-seam"></i> Sản phẩm của bạn
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_wishlist" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-heart"></i> Sản phẩm yêu thích
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_coupons" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-ticket-perforated"></i> Mã giảm
-     giá
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_address" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-geo-alt"></i> Sổ địa chỉ
-</div>
-<hr class="mx-3">
-<div class="nav-link" hx-get="{% url "store:customer_settings" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-gear"></i> Cài đặt
-</div>
-<div class="nav-link" hx-get="{% url "store:customer_account" %}" hx-target="#page-content" hx-swap="innerHTML" hx-push-url="true">
-     <i class="bi bi-person-circle"></i> Hồ sơ của tôi
-</div> {% endcomment %}
